@@ -1,0 +1,11 @@
+.heroe-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20PX;
+    flex-wrap: wrap;
+}
+
+/* li{
+    width: 17%;
+} */

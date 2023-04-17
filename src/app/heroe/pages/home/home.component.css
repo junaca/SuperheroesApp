@@ -1,0 +1,9 @@
+.home-body{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.img-logo{
+    margin-top: 50px;
+}
