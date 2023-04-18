@@ -1,12 +1,18 @@
 <div class="row">
-    <div class="col mx-auto">
+    <form (ngSubmit)="searchHeroe()" 
+          class="col mx-auto div-searchContainer"
+          autocomplete="off">
 
-        <mat-form-field appearance="fill">
-            <mat-label>Input</mat-label>
-            <input matInput>
-        </mat-form-field>
+        
+        <input type="text"
+               class="form-control input-search"
+               name="termino"
+               [(ngModel)]="termino">
     
-        <button mat-stroked-button color="primary">Primary</button>
+        <button class="btn btn-search"
+                type="submit">
+            Buscar
+        </button>
     
-    </div>
+    </form>
 </div>

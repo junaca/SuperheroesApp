@@ -1,6 +1,7 @@
-<div class="heroe-card">
-    <img class="heroe-card-img">
+<div class="heroe-card"
+     [routerLink]="['/details', heroe.id]">
+    <img class="heroe-card-img" src="{{ heroeImage }}">
     <div class="heroe-card-name">
-        <span>Heroe</span>
+        <span>{{ heroe.name }}</span>
     </div>
 </div>

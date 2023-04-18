@@ -8,6 +8,8 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { HeroeListComponent } from './components/heroe-list/heroe-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
+import { FormsModule } from '@angular/forms';
+import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { HeroeCardComponent } from './components/heroe-card/heroe-card.component
     DetailsComponent,
     SearchbarComponent,
     HeroeListComponent,
-    HeroeCardComponent
+    HeroeCardComponent,
+    AlertDialogComponent
   ],
   imports: [
     CommonModule,
     HeroeRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    FormsModule
   ]
 })
 export class HeroeModule { }

@@ -1,0 +1,10 @@
+.dialog{
+    padding: 10px 24px;
+    background-color: var(--background);
+    border: 3px solid var(--primary);
+    color: white;
+    justify-content: center;
+}
+h1{
+    margin: 0px;
+}

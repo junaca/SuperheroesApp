@@ -1,11 +1,12 @@
-.heroe-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20PX;
-    flex-wrap: wrap;
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
-
-/* li{
-    width: 17%;
-} */
+.heroe-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(216px, 400px));
+    padding: 30px 20px;
+    justify-content: space-around;
+    grid-gap: 20px;
+}
