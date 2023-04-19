@@ -1,0 +1,13 @@
+<div class="spinner" 
+     *ngIf="!isReady; else heroeList">
+    <mat-spinner></mat-spinner>
+</div>
+<ng-template #heroeList>
+
+    <div class="heroe-list">
+        <app-heroe-card *ngFor="let heroe of heroes"
+                        [heroe]="heroe"></app-heroe-card>
+    </div>
+
+</ng-template>
+

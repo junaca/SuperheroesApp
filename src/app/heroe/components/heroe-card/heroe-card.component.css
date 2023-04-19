@@ -1,0 +1,33 @@
+.heroe-card{
+    background-color: var(--primary);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 216px;
+    max-width: 400px;
+
+}
+.heroe-card:hover{
+    cursor: pointer;
+    transform: translate(-5px, -5px);
+    transition: transform 0.2s ease;
+    border: 1px solid var(--terciary);
+}
+.heroe-card-img{
+    min-width: 216px;
+    max-width: 400px;
+    width: 100%;
+}
+.heroe-card-name{
+    text-align: center;
+    padding: 6px 16px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+.heroe-card-name>span{
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    word-wrap: break-word;
+    line-height: 35px;
+}

@@ -1,0 +1,12 @@
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.heroe-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(216px, 400px));
+    padding: 30px 20px;
+    justify-content: space-around;
+    grid-gap: 20px;
+}
