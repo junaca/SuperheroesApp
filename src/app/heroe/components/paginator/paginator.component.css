@@ -1,0 +1,38 @@
+.mat-mdc-paginator{
+    background-color: var(--primary);
+}
+.mat-mdc-paginator-container{
+    font-size: 25px;
+    color: white;
+    justify-content: center;
+}
+.mat-paginator-container-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .mat-paginator-page {
+    margin: 0 5px;
+    padding: 4px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--primary);
+    transition: all 0.2s ease;
+  }
+  
+  .mat-paginator-page:hover,
+  .mat-paginator-page:focus {
+    background-color: var(--primary);
+    color: white;
+    outline: none;
+  }
+  
+  .mat-paginator-navigation-previous .mat-icon,
+  .mat-paginator-navigation-next .mat-icon {
+    font-size: 24px;
+  }
+  

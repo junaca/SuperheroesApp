@@ -10,6 +10,7 @@ import { HeroeListComponent } from './components/heroe-list/heroe-list.component
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { FormsModule } from '@angular/forms';
 import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.com
     SearchbarComponent,
     HeroeListComponent,
     HeroeCardComponent,
-    AlertDialogComponent
+    AlertDialogComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule,
