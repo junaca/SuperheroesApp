@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
@@ -14,6 +15,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
     MatPaginatorModule,
     MatProgressSpinnerModule
   ]

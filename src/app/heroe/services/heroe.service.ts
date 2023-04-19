@@ -5,7 +5,7 @@ import { HeroeResponse, Result } from '../interfaces/heroe';
 import { environment } from 'src/environments/environment';
 
 import { Observable, Subject } from 'rxjs';
-import { Data } from '@angular/router';
+import { Data, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,8 @@ export class HeroeService {
     return this._termino.asObservable();
   }
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient,
+               private router: Router ) { }
 
   getSuperheroes( termino?: string, limit: number=100, offset: number=0 ): void {
 
@@ -47,8 +48,7 @@ export class HeroeService {
       this._termino.next( termino );
     }
 
-    const url = `${ this.baseUrl }`;
-    this.http.get<HeroeResponse>( url, { params } )
+    this.http.get<HeroeResponse>(`${this.baseUrl}characters`, { params } )
       .subscribe( ( resp ) => {
         this._heroes.next( resp.data.results );
         this._dataResult.next({
@@ -62,8 +62,29 @@ export class HeroeService {
 
   }
 
-  getUrlImage( url: string, extension: string ): string {
-    return `${ url }/portrait_incredible.${ extension }`;
+  getHeroe( id: string ) {
+
+    let params = {
+      ts: 1000,
+      apikey: this.apikey,
+      hash: this.hash
+    }
+
+    return this.http.get<HeroeResponse>(`${this.baseUrl}characters/${ id }`, { params } );
+  }
+
+  getUrlImage( url: string, size: string, extension: string ): string {
+    return `${ url }/${size}.${ extension }`;
+  }
+
+  openWebside(  ) {
+    let params = {
+      ts: 1000,
+      apikey: this.apikey,
+      hash: this.hash
+    }
+    
+    //this.router.navigateByUrl(`${this.baseUrl}`, { params });
   }
 }
 
