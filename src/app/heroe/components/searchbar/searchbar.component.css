@@ -4,6 +4,8 @@
 }
 .div-searchContainer{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 .input-search{
@@ -28,4 +30,14 @@
 }
 .btn-search:hover{
     background-color: var(--terciary);
+}
+
+@media ( max-width: 600px  ) {
+    .input-search{
+        width: 100%;
+        min-width: inherit;
+    }
+    .btn-search{
+        width: 100%;
+    }
 }

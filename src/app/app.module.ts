@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TopBotonComponent } from './heroe/components/top-boton/top-boton.component';
 
 @NgModule({
   declarations: [

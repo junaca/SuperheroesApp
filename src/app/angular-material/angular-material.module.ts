@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import {MatListModule} from '@angular/material/list';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatListModule,
     MatPaginatorModule,

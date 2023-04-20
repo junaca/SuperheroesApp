@@ -51,8 +51,8 @@ export class DetailsComponent {
     this.heroeImage =this.heroeService.getUrlImage( url, size, extension )
   }
 
-  openWebside(  ) {
-    this.heroeService.openWebside();
+  openWebside( url: string ) {
+    return this.heroeService.openWebside( url );
   }
 
 }

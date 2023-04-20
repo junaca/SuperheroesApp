@@ -23,10 +23,8 @@
                 <ul *ngIf="heroe.comics.items.length > 0">
                     <h2 mat-subheader>Comics:</h2>
                     <mat-list-item *ngFor="let item of  heroe.comics.items ">
-                    <li matListItemLine>
-                        <a href="{{ item.resourceURI }}">
+                    <li matListItemLine >
                             {{ item.name }}
-                        </a>
                     </li>
                     </mat-list-item>
                     <mat-divider></mat-divider>
@@ -36,9 +34,7 @@
                     <h2 mat-subheader>Series:</h2>
                     <mat-list-item *ngFor="let item of heroe.series.items">
                         <li matListItemLine>
-                            <a href="{{ item.resourceURI }}">
                                 {{ item.name }}
-                            </a>
                         </li>
                     </mat-list-item>
                     <mat-divider></mat-divider>
@@ -48,9 +44,7 @@
                     <h2 mat-subheader>Stories:</h2>
                     <mat-list-item *ngFor="let item of  heroe.stories.items">
                         <li matListItemLine>
-                            <a href="{{ item.resourceURI }}">
                                 {{ item.name }}
-                            </a>
                         </li>
                     </mat-list-item>
                     <mat-divider></mat-divider>
@@ -60,15 +54,16 @@
                     <h2 mat-subheader>Events:</h2>
                     <mat-list-item *ngFor="let item of  heroe.events.items">
                         <li matListItemLine>
-                            <a href="{{ item.resourceURI }}">
                                 {{ item.name }}
-                            </a>
                         </li>
                     </mat-list-item>
                     <mat-divider></mat-divider>
                 </ul>
                 
             </mat-list>
+
         </div>
     </div>
+
+    <app-top-boton></app-top-boton>
 </ng-template>

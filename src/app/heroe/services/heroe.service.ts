@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { HeroeResponse, Result } from '../interfaces/heroe';
 import { environment } from 'src/environments/environment';
 
-import { Observable, Subject } from 'rxjs';
-import { Data, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +34,7 @@ export class HeroeService {
   constructor( private http: HttpClient,
                private router: Router ) { }
 
-  getSuperheroes( termino?: string, limit: number=100, offset: number=0 ): void {
+  getSuperheroes( termino?: string, limit: number=50, offset: number=0 ): void {
 
     let params = {
       ts: 1000,
@@ -77,14 +77,19 @@ export class HeroeService {
     return `${ url }/${size}.${ extension }`;
   }
 
-  openWebside(  ) {
-    let params = {
+  openWebside( url: string ) {
+    const params = {
       ts: 1000,
       apikey: this.apikey,
       hash: this.hash
     }
+
+    const paramString = Object.entries(params)
+                          .map(([key, value]) => `${key}=${value}`)
+                          .join('&');
+
+    return `${ url }?${paramString}`;
     
-    //this.router.navigateByUrl(`${this.baseUrl}`, { params });
   }
 }
 
