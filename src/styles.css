@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%; }
+body { 
+  --primary: #F4BE48;
+  --secondary: #FAE53F;
+  --terciary: #FA913F;
+  --background: #201A19;
+
+  background-color: var(--background);
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+ }
+
+.img-logo{
+  src: "assets/images/marvel-logo.jpg";
+  width: 50%;
+  max-width: 500px;
+}
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

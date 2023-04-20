@@ -1,0 +1,18 @@
+<div class="row">
+    <form (ngSubmit)="searchHeroe()" 
+          class="col mx-auto div-searchContainer"
+          autocomplete="off">
+
+        
+        <input type="text"
+               class="form-control input-search"
+               name="termino"
+               [(ngModel)]="termino">
+    
+        <button class="btn btn-search"
+                type="submit">
+            Buscar
+        </button>
+    
+    </form>
+</div>
