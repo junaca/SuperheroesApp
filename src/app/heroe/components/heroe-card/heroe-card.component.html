@@ -1,5 +1,5 @@
 <div class="heroe-card"
-     [routerLink]="['/details', heroe.id]">
+     (click)="toDetails()">
     <img class="heroe-card-img" src="{{ heroeImage }}">
     <div class="heroe-card-name">
         <span>{{ heroe.name }}</span>

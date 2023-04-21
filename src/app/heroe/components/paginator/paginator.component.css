@@ -6,9 +6,12 @@
     color: white;
     justify-content: center;
 }
+.mat-mdc-paginator-container{
+  margin: auto;
+}
 .mat-paginator-container-custom {
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
     margin: 10px 0;
   }

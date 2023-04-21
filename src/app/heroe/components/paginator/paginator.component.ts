@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { HeroeService } from '../../services/heroe.service';
 
 @Component({
@@ -7,20 +7,23 @@ import { HeroeService } from '../../services/heroe.service';
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.css']
 })
-export class PaginatorComponent implements PageEvent {
-
-  pageIndex: number = 0;
+export class PaginatorComponent extends MatPaginator implements PageEvent {
+  //pageIndex: number = 0;
   previousPageIndex?: number | undefined;
-  length: number = 1000;
-  pageSize = 100;
+  //length!: number;// = 1000;
+  //override pageSize: number;// = 100;
   currentPageIndex = 0;
   displayedPages: number[] = [];
   termino?: string;
+  //matPaginatorIntl = new MatPaginatorIntl();
 
-  constructor( private heroeService: HeroeService ) { }
+  constructor( private heroeService: HeroeService,
+    private customPaginatorIntl: MatPaginatorIntl, 
+    private changeDetectorRef: ChangeDetectorRef ) {
+    super( customPaginatorIntl, changeDetectorRef);
+  }
 
-
-  ngOnInit(): void {
+  override ngOnInit(): void {
     
     this.heroeService.dataResult
       .subscribe( resp => {
@@ -28,6 +31,7 @@ export class PaginatorComponent implements PageEvent {
         console.log(this.length)
         this.pageSize = resp.count;
       } );
+
     this.heroeService.termino
       .subscribe( termino => {
         this.termino = termino;
@@ -53,9 +57,8 @@ export class PaginatorComponent implements PageEvent {
 
     const offset = this.pageIndex * this.pageSize;
 
-    console.log( this.pageIndex );
     this.heroeService.getSuperheroes( this.termino, this.pageSize , offset );
-
+    
   }
 
 
