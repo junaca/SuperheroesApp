@@ -29,7 +29,6 @@ export class DetailsComponent {
     .pipe(
       tap( () => this.isReady = false ),
       switchMap( ({ id })  => {
-        console.log( id )
         return this.heroeService.getHeroe( id );
       })
     )
@@ -37,13 +36,11 @@ export class DetailsComponent {
       this._heroe = resp.data.results[0];
       this.isReady = true;
       this.getCardImage();
-      console.log("Heroe ready")
     });
 
   }
 
   getCardImage() {
-    console.log("Image charge")
     const url = this._heroe.thumbnail.path;
     const size = "portrait_incredible";
     const extension = this._heroe.thumbnail.extension;

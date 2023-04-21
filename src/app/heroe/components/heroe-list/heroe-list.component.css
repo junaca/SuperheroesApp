@@ -1,9 +1,9 @@
 .heroe-list{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit ,minmax(216px, 500px));
-    padding: 30px 20px;
+    grid-template-columns: repeat(auto-fit,minmax(432px, 1fr));
+    padding: 30px 3vw;
     justify-content: space-around;
     align-items: center;
-    grid-gap: 20px;
+    grid-gap: 3vw;
 }
