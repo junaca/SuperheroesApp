@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Result } from '../../interfaces/heroe';
 import { HeroeService } from '../../services/heroe.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-searchbar',
@@ -11,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchbarComponent {
 
   //@ViewChild("inputSearch") inputSearch!: ElementRef;
-  private heroes!: Result[];
+  /* private heroes!: Result[]; */
   termino: string | undefined;
 
   constructor( private heroeService: HeroeService ) {}
 
   searchHeroe() {
 
-    this.heroeService.getSuperheroes( this.termino || undefined );
+    this.heroeService.getSuperheroes( this.termino || undefined )
+      .subscribe();
 
   }
 

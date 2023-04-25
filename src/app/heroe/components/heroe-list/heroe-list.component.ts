@@ -20,14 +20,15 @@ export class HeroeListComponent {
 
   ngOnInit(): void {
     
-    this.heroeService.getSuperheroes()
+    this.heroeService.heroes
+      .subscribe( heroes => this.heroes = heroes )
 
-      this.heroeService.heroes
+    this.heroeService.getSuperheroes()
       .pipe(
         tap( () => { this.isReady = false } )
       )
       .subscribe( resp => {
-        if( resp.length<=0 ) {
+        if( resp.data.results.length<=0 ) {
           const dialoRef = this.dialog.open( AlertDialogComponent, {
             enterAnimationDuration: "300ms",
             exitAnimationDuration: "3000ms"
@@ -39,7 +40,7 @@ export class HeroeListComponent {
             }, 2000)
           })
         } else {
-          this.heroes = resp;
+          this.heroes = resp.data.results;
         }
         this.isReady = true;
       } );
