@@ -18,7 +18,8 @@ export class SearchbarComponent {
 
   searchHeroe() {
 
-    this.heroeService.getSuperheroes( this.termino || undefined );
+    this.heroeService.getSuperheroes( this.termino || undefined )
+      .subscribe();
 
   }
 
