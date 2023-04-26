@@ -29,9 +29,6 @@ describe('AppComponent', () => {
   it('should render title',  () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    //fixture.detectChanges();
-    //const compiled = fixture.nativeElement as HTMLElement;
-    // expect(compiled.querySelector('.content span')?.textContent).toContain('superheroesApp app is running!');
     expect( app.title ).toBe("superheroesApp");
   });
 });

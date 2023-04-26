@@ -56,9 +56,9 @@ export class PaginatorComponent extends MatPaginator implements PageEvent {
 
     const offset = this.pageIndex * this.pageSize;
 
-    this.heroeService.getSuperheroes( this.termino, this.pageSize , offset );
+    this.heroeService.getSuperheroes( this.termino, this.pageSize , offset )
+      .subscribe();
     
   }
-
 
 }
