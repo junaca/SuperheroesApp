@@ -58,6 +58,7 @@ export class HeroeService {
             total: resp.data.total,
             count: resp.data.count
           });
+
           return resp.data.results;
         }
         
