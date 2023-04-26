@@ -40,7 +40,6 @@ export class PaginatorComponent extends MatPaginator implements PageEvent {
   }
 
   get lastPageIndex() {
-    console.log(Math.floor(this.length / this.pageSize))
     return Math.floor(this.length / this.pageSize);
   }
 
