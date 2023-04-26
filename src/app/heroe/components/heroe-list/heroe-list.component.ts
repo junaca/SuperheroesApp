@@ -20,10 +20,10 @@ export class HeroeListComponent {
 
   ngOnInit(): void {
     
-    this.heroeService.heroes
-      .subscribe( heroes => this.heroes = heroes )
-
     this.heroeService.getSuperheroes()
+      .subscribe()
+
+    this.heroeService.heroes
       .pipe(
         tap( () => { this.isReady = false } )
       )
@@ -36,7 +36,7 @@ export class HeroeListComponent {
 
           dialoRef.afterOpened().subscribe(_ => {
             setTimeout(() => {
-               dialoRef.close();
+              dialoRef.close();
             }, 2000)
           })
         } else {
@@ -44,8 +44,6 @@ export class HeroeListComponent {
         }
         this.isReady = true;
       } );
-
-      
 
   }
 

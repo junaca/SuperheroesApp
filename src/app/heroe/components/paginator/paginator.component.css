@@ -1,4 +1,4 @@
-.mat-mdc-paginator{
+/* .mat-mdc-paginator{
     background-color: var(--primary);
 }
 .mat-mdc-paginator-container{
@@ -37,5 +37,14 @@
   .mat-paginator-navigation-previous .mat-icon,
   .mat-paginator-navigation-next .mat-icon {
     font-size: 24px;
+  } */
+  .paginator{
+    background-color: var(--primary);
+    justify-content: center;
+  }
+  mat-paginator{
+    width: fit-content;
+    margin: auto;
+    background-color: inherit;
   }
   

@@ -1,7 +1,9 @@
 
-<mat-paginator [length]="length"
+<div class="paginator">
+    <mat-paginator [length]="length"
                [pageSize]="pageSize"
                aria-label="Select page"
                hidePageSize
                (page)="updateDisplayedPages( $event )">
-</mat-paginator>
+    </mat-paginator>
+</div>

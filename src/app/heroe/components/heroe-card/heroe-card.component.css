@@ -2,9 +2,7 @@
     background-color: var(--primary);
     border-radius: 12px;
     overflow: hidden;
-    min-width: 216px;
-    max-width: 500px;
-
+    width: 100%;
 }
 .heroe-card:hover{
     cursor: pointer;
