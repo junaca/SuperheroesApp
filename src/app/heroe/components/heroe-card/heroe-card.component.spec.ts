@@ -46,15 +46,4 @@ describe("HeroeCard", () => {
         expect(spyRouter).toHaveBeenCalledWith(['./heroe/details'], { queryParams: {id: component.heroe.id } });           
     }));
 
-    //TODO: 
-    /* it('navigate to /details with incorrect ID', fakeAsync( () => {
-        component.heroe.id = 0;
-        const spyRouter = spyOn(activatedRoute, 'url');
-        console.log(router.url)
-        
-        component.toDetails();
-        
-        expect(spyRouter).toHaveBeenCalledWith(["./heroe/home"]);      
-        
-    })); */
 })

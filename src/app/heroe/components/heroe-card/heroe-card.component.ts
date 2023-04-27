@@ -31,12 +31,15 @@ export class HeroeCardComponent {
   }
 
   toDetails() {
-
-    this.router.navigate(["./heroe/details"], { 
-      queryParams: {
-        id: this.heroe.id
-      }
-    });
+    const id = this.heroe.id;
+    if(id){
+      this.router.navigate(["./heroe/details"], { 
+        queryParams: {
+          id: this.heroe.id
+        }
+      });
+    } 
+    
 
   }
 

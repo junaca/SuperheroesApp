@@ -43,7 +43,6 @@ describe("HeroeListComponent", () => {
     } )
 
     it("getSuperheroes all heroes", () => {
-      
         spyOn( heroeService, "getSuperheroes" ).and.returnValue(of({heroeResponse} as any))
         
         fixture.detectChanges();
