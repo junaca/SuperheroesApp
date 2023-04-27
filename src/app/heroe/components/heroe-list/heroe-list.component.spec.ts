@@ -14,8 +14,6 @@ describe("HeroeListComponent", () => {
     let heroeService: HeroeService;
 
     let heroeResponse = {
-          code: 200,
-          status: "Ok",
           data: {
             results: [
               {
@@ -23,12 +21,9 @@ describe("HeroeListComponent", () => {
                 name: "White Queen (Adrienne Frost)",
                 description: "",
                 modified: "1969-12-31T19:00:00-0500"
-
-                }],
-            total: 1,
-            count: 1
+              }
+            ]
           },
-          attributionText: "Data provided by Marvel. © 2022 MARVEL"
         }
       
 
@@ -41,14 +36,13 @@ describe("HeroeListComponent", () => {
           })
           .compileComponents();
     
-
         fixture = TestBed.createComponent( HeroeListComponent );
         component = fixture.componentInstance;
         heroeService = TestBed.inject( HeroeService );
         
     } )
 
-    it("getSuperheroes", () => {
+    it("getSuperheroes all heroes", () => {
       
         spyOn( heroeService, "getSuperheroes" ).and.returnValue(of({heroeResponse} as any))
         
