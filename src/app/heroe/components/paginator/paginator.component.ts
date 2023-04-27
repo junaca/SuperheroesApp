@@ -8,14 +8,11 @@ import { HeroeService } from '../../services/heroe.service';
   styleUrls: ['./paginator.component.css']
 })
 export class PaginatorComponent extends MatPaginator implements PageEvent {
-  //pageIndex: number = 0;
+
   previousPageIndex?: number | undefined;
-  //length!: number;// = 1000;
-  //override pageSize: number;// = 100;
   currentPageIndex = 0;
   displayedPages: number[] = [];
   termino?: string;
-  //matPaginatorIntl = new MatPaginatorIntl();
 
   constructor( private heroeService: HeroeService,
     private customPaginatorIntl: MatPaginatorIntl, 
