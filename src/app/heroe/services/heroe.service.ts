@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { HeroeResponse, Result } from '../interfaces/heroe';
 import { environment } from 'src/environments/environment';
 
 import { Subject, Observable, tap } from 'rxjs';
-import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -58,8 +59,8 @@ export class HeroeService {
             total: resp.data.total,
             count: resp.data.count
           });
-
-          return resp.data.results;
+          
+          return resp;
         }
         
         ) 

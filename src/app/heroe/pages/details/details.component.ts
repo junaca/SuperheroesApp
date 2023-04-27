@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap, tap } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, of, switchMap, tap } from 'rxjs';
 import { HeroeService } from '../../services/heroe.service';
 import { Result } from '../../interfaces/heroe';
 
@@ -21,21 +21,31 @@ export class DetailsComponent {
   }
 
   constructor( private activatedRoute: ActivatedRoute,
-               private heroeService: HeroeService ) {}
+               private heroeService: HeroeService,
+               private router: Router ) {}
 
   ngOnInit(): void {
-
+    
     this.activatedRoute.queryParams
     .pipe(
       tap( () => this.isReady = false ),
       switchMap( ({ id })  => {
+
         return this.heroeService.getHeroe( id );
+      }),
+      catchError( error => {
+        console.log("Error", error.message)
+        window.history.back()
+        return of(null)
       })
     )
     .subscribe( resp => {
-      this._heroe = resp.data.results[0];
-      this.isReady = true;
-      this.getCardImage();
+
+      if( resp ) {
+        this._heroe = resp.data.results[0];
+        this.isReady = true;
+        this.getCardImage();
+      }
     });
 
   }

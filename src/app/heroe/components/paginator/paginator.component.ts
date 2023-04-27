@@ -25,7 +25,6 @@ export class PaginatorComponent extends MatPaginator implements PageEvent {
     this.heroeService.dataResult
       .subscribe( resp => {
         this.length = resp.total;
-        console.log(this.length)
         this.pageSize = resp.count;
       } );
 
