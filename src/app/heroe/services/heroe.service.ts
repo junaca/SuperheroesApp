@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { HeroeResponse, Result } from '../interfaces/heroe';
 import { environment } from 'src/environments/environment';
 
-import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
+import { Subject, Observable, tap } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class HeroeService {
   constructor( private http: HttpClient,
                private router: Router ) { }
 
-  getSuperheroes( termino?: string, limit: number=50, offset: number=0 ): void {
+  getSuperheroes( termino?: string, limit: number=50, offset: number=0 ): Observable<HeroeResponse> {
 
     let params = {
       ts: 1000,
@@ -48,17 +49,22 @@ export class HeroeService {
       this._termino.next( termino );
     }
 
-    this.http.get<HeroeResponse>(`${this.baseUrl}characters`, { params } )
-      .subscribe( ( resp ) => {
-        this._heroes.next( resp.data.results );
-        this._dataResult.next({
-          offset: resp.data.offset,
-          limit: resp.data.limit,
-          total: resp.data.total,
-          count: resp.data.count
-        });
-        console.log( params )
-      } );
+    return this.http.get<HeroeResponse>(`${this.baseUrl}characters`, { params } )
+      .pipe(
+        tap ( ( resp ) => {
+          this._heroes.next( resp.data.results );
+          this._dataResult.next({
+            offset: resp.data.offset,
+            limit: resp.data.limit,
+            total: resp.data.total,
+            count: resp.data.count
+          });
+          
+          return resp;
+        }
+        
+        ) 
+      );
 
   }
 
