@@ -4,7 +4,7 @@ import { HeroeCardComponent } from "./heroe-card.component";
 import { HeroeService } from "../../services/heroe.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { Extension, Result } from '../../interfaces/heroe';
+import { Extension, Result } from '../../../shared/interfaces/heroe';
 import { RouterTestingModule } from "@angular/router/testing";
 
 describe("HeroeCard", () => {

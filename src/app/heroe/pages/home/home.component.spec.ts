@@ -5,7 +5,7 @@ import { HomeComponent } from "./home.component";
 import { SearchbarComponent } from '../../components/searchbar/searchbar.component';
 import { HeroeListComponent } from "../../components/heroe-list/heroe-list.component";
 import { AngularMaterialModule } from '../../../angular-material/angular-material.module';
-import { TopBotonComponent } from "../../components/top-boton/top-boton.component";
+import { TopBotonComponent } from "../../../shared/components/top-boton/top-boton.component";
 import { PaginatorComponent } from "../../components/paginator/paginator.component";
 
 describe("HomeComponent", () => {

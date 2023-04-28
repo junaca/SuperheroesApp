@@ -24,7 +24,9 @@
                     <h2 mat-subheader>Comics:</h2>
                     <mat-list-item *ngFor="let item of  heroe.comics.items ">
                     <li matListItemLine >
+                        <a (click)="toEntertaiment()">
                             {{ item.name }}
+                        </a>
                     </li>
                     </mat-list-item>
                     <mat-divider></mat-divider>

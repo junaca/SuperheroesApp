@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Result } from '../../interfaces/heroe';
+import { Result } from '../../../shared/interfaces/heroe';
 import { HeroeService } from '../../services/heroe.service';
 
 @Component({

@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Result } from '../../interfaces/heroe';
-import { HeroeService } from '../../services/heroe.service';
 import { Router } from '@angular/router';
+
+import { Result } from '../../../shared/interfaces/heroe';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-heroe-card',
@@ -13,7 +14,7 @@ export class HeroeCardComponent {
   @Input("heroe") heroe!: Result;
   heroeImage: string = "";
 
-  constructor( private heroeService: HeroeService,
+  constructor( private sharedService: SharedService,
                private router: Router ) {}
 
   ngOnInit(): void {
@@ -27,20 +28,18 @@ export class HeroeCardComponent {
     const size = "portrait_incredible";
     const extension = this.heroe.thumbnail.extension;
 
-    this.heroeImage =this.heroeService.getUrlImage( url, size, extension )
+    this.heroeImage =this.sharedService.getUrlImage( url, size, extension )
   }
 
   toDetails() {
     const id = this.heroe.id;
     if(id){
-      this.router.navigate(["./heroe/details"], { 
+      this.router.navigate(["./details"], { 
         queryParams: {
           id: this.heroe.id
         }
       });
     } 
-    
-
   }
 
 }
