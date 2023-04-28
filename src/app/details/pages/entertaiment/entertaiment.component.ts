@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class EntertaimentComponent {
 
-  isReady: boolean = false;
+  isReady: boolean = true;//TODO: Pruebas antes de cargar nada
 
 }

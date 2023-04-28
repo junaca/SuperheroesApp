@@ -64,12 +64,13 @@ export class DetailsComponent {
     return this.detailsService.getEntertimentUrl( url );
   }
 
-  toEntertaiment() {
-      const id = this.heroe.id;
+  toEntertaiment( type: string, url: string ) {
+      const id = url.split("/").pop();
       if(id){
-        this.router.navigate(["./heroe/details"], { 
+        this.router.navigate(["./details/entertaiment"], { 
           queryParams: {
-            id: this.heroe.id
+            type,
+            id
           }
         });
       } 
