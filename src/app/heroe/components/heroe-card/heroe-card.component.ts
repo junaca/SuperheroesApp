@@ -14,8 +14,7 @@ export class HeroeCardComponent {
   @Input("heroe") heroe!: Result;
   heroeImage: string = "";
 
-  constructor( private sharedService: SharedService,
-               private router: Router ) {}
+  constructor( private sharedService: SharedService ) {}
 
   ngOnInit(): void {
     
@@ -32,14 +31,7 @@ export class HeroeCardComponent {
   }
 
   toDetails() {
-    const id = this.heroe.id;
-    if(id){
-      this.router.navigate(["./details"], { 
-        queryParams: {
-          id: this.heroe.id
-        }
-      });
-    } 
+    this.sharedService.toDetails(this.heroe.id);
   }
 
 }

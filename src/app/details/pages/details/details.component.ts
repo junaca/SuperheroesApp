@@ -46,19 +46,16 @@ export class DetailsComponent {
       if( resp ) {
         this._heroe = resp.data.results[0];
         this.isReady = true;
-        this.getCardImage();
+
+        const imageUrl = this._heroe.thumbnail.path;
+        const extension = this._heroe.thumbnail.extension;
+        this.heroeImage = this.sharedService.getUrlImage( imageUrl, "portrait_incredible", extension )
       }
     });
 
   }
 
-  getCardImage() {
-    const url = this._heroe.thumbnail.path;
-    const size = "portrait_incredible";
-    const extension = this._heroe.thumbnail.extension;
-
-    this.heroeImage =this.sharedService.getUrlImage( url, size, extension )
-  }
+  
 
   getEntertimentUrl( url: string ) {
     return this.detailsService.getEntertimentUrl( url );

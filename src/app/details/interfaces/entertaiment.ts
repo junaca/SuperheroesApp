@@ -1,4 +1,22 @@
-export interface Comics {
+export interface EntertaimentResponse {
+    code:            number;
+    status:          string;
+    copyright:       string;
+    attributionText: string;
+    attributionHTML: string;
+    etag:            string;
+    data:            Data;
+}
+
+export interface Data {
+    offset:  number;
+    limit:   number;
+    total:   number;
+    count:   number;
+    results: Entertaiment[];
+}
+
+export interface Entertaiment {
     id:                 number;
     digitalId:          number;
     title:              string;
@@ -30,7 +48,7 @@ export interface Comics {
     events:             Characters;
 }
 
-export interface Series {
+/* export interface Series {
     id:          number;
     title:       string;
     description: null;
@@ -84,7 +102,7 @@ export interface Events {
     series:      Characters;
     next:        Next;
     previous:    Next;
-}
+} */
 
 
 export interface Characters {
