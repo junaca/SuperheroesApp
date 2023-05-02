@@ -1,38 +1,53 @@
 .details-container{
     color: var(--primary);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     font-size: 1.3rem;
     line-height: normal;
-    padding: 20px;
+    padding: 0px 20px;
     height: 100%;
 }
+.details-info{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap: 20px;
+}
+.image-container, .info-container{
+    /* max-height: 100vh; */
+    /* height: 100%; */
+}
 .image-container{
-    width: 40%;
+    width: fit-content;
+    min-width: 40%;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .image{
-    width: 100%;/* 
-    min-width: 300px;*/
-    max-width: 700px; 
+    width: 100%;
+    max-width: 600px;
+    max-height: 100%;
+    max-height: 900px;
     border-radius: 15px;
     margin: 0px auto;
 }
 .info-container{
-    width: 60%;/* 
-    height: 100%; */
+    max-width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .name{
+    /* width: 100%; */
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 4.5rem;
     line-height: 1.2em;
-    margin: 40px 0px;
+    margin-bottom: 16px;
+    padding-right: 40px;
+    text-align: right;
     text-shadow: 2px 4px 3px rgba(255,255,255,0.3);
 }
 .list-info{
@@ -56,12 +71,18 @@ mat-divider{
     background-color: var(--primary);
 }
 h2{
-    font-size: 2rem;/* 
+    font-size: 2.5rem;/* 
     line-height: 30px; */
 }
 li{
     font-size: 1.3rem;
     color: var(--primary);
+}
+li:hover{
+    cursor: pointer;
+}
+a:hover{
+    color: var(--terciary);
 }
 
 /* Scrollbar */
@@ -84,10 +105,20 @@ li{
         flex-direction: column;
         height: auto;
         font-size: 1rem;
+        padding: 0;
     }
     .image-container, .info-container{
         width: 100%;
+        max-width: inherit;
     }
+    .image{
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    /* mat-divider:first-of-type{
+        display: none;
+    } */
     mat-list{
         box-shadow: none;
     }
@@ -95,7 +126,8 @@ li{
         padding: 0;
     }
     .name{
-        margin-top: 0px;
+        padding-left: 0;
+        text-align: center;
         font-size: 2rem;
     }
     h2{
