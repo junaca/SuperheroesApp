@@ -1,78 +1,29 @@
-.details-container{
-    color: var(--primary);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    font-size: 1.3rem;
-    line-height: normal;
-    padding: 0px 20px;
-    height: 100%;
-}
-.image-container{
-    max-width: 100%;
-    width: 40%;
-    max-height: calc(100% - 120px);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    /* padding: 10px; */
-}
 .image{
     max-width: 100%;
-    max-height: 800px;
-    height: 80%;
+    height: 100%;
+    max-height: 700px;
+    height: 70%;
     border-radius: 15px;
     margin: 0px auto;
-}
-.info-container{
-    max-width: 60%;
-    width: 100%;
-    max-height: calc(100% - 120px);
-    display: flex;
-    flex-direction: column;
-}
+  }
 .name{
-    width: 100%;
-    font-weight: bold;
     font-size: 4.5rem;
     line-height: 1.2em;
-    margin-bottom: 16px;
-    padding-right: 40px;
-    text-align: right;
-    text-shadow: 2px 4px 3px rgba(255,255,255,0.3);
-}
-.list-info{
-    overflow: scroll;
-    overflow-x: hidden;
-}
-mat-list{
-    box-shadow:
-        15px 15px 15px -20px #302A29,
-        15px 15px 15px -20px #302A29,
-        15px 15px 15px -20px #302A29,
-        inset 15px 15px 15px -20px #302A29,
-        inset 15px 15px 15px -20px #302A29,
-        inset 15px 15px 15px -20px #302A29;
-    border-radius: 10px;
-}
-.list-info>div{
-    margin-bottom: 20px;
-}
-mat-divider{
-    background-color: var(--primary);
 }
 h2{
     font-size: 2.5rem;
 }
+mat-list-item, mat-list{
+    height: calc(fit-content + 10px) !important;
+}
 li{
     font-size: 1.3rem;
     color: var(--primary);
-}
-li:hover{
-    cursor: pointer;
+    white-space: normal;
 }
 a, mat-list a{
     text-decoration: underline;
+    cursor: pointer;
 }
 a:hover, mat-list a:hover{
     cursor: pointer;
@@ -87,13 +38,10 @@ a:hover, mat-list a:hover{
     }
 }
 
-@media (max-width: 700px) or ( orientation: portrait) {
+@media (max-width: 700px) and ( orientation: portrait) {
     .details-container{
-        width: 100%;
-        flex-direction: column;
-        height: auto;
+        height: auto; 
         font-size: 1.5rem;
-        padding: 10px;
     }
     .image-container, .info-container{
         width: 100%;
@@ -104,15 +52,10 @@ a:hover, mat-list a:hover{
         width: 100%;
         max-width: 400px;
     }
-    mat-list{
-        box-shadow: none;
-    }
     ul{
         padding: 0;
     }
     .name{
-        padding-left: 0;
-        text-align: center;
         font-size: 3rem;
     }
     h2{
@@ -120,6 +63,6 @@ a:hover, mat-list a:hover{
     }
     
     li{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }

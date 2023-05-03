@@ -5,69 +5,73 @@
 
 <ng-template #entertaimentInfo>
     <div class="entertaiment-container">
+        
+        <h1 class="name">{{ entertaiment.title }}</h1>
+
         <div class="image-container">
             <img class="image"
-                src="{{ image }}"><!-- {{ heroeImage }} -->
+                src="{{ image }}">
             <p class="description">
                 {{ entertaiment.description }}
             </p>
         </div>
 
         
-            <div class="info-container">
-                <h1 class="name">{{ entertaiment.title }}</h1>
-                <mat-divider></mat-divider>
+        <div class="info-container">
+            <mat-divider></mat-divider>
 
-                <mat-list class="list-info">
-    
-                    <div *ngIf="entertaiment.dates  && entertaiment.dates.length > 0"
-                        class="grid">
-                        <span *ngFor="let item of entertaiment.dates">
-                            <label>{{ item.type }}:</label>
-                            <label> {{ item.date | date }}</label>
-                        </span>
-                        <mat-divider></mat-divider>
-                    </div>
-        
-                    <div *ngIf="entertaiment.prices && entertaiment.prices.length > 0"
-                        class="grid">
-                        <span *ngFor="let item of entertaiment.prices">
-                            <label>{{ item.type }}:</label>
-                            <label> {{ item.price }}$</label>
-                        </span>
-                        <mat-divider></mat-divider>
-                    </div>
-        
-                    <div *ngIf="entertaiment.characters.items.length > 0"
-                        class="grid">
-                        <h2>Characters</h2>
-                        <span *ngFor="let item of entertaiment.characters.items">
-                            <a (click)="toDetails(getHeroId( item.resourceURI ))">{{ item.name }}</a>
-                        </span>
-                        <mat-divider></mat-divider>
-                    </div>
-        
-                    <div *ngIf="entertaiment.creators.items.length > 0" 
-                         class="grid">
-                        <h2>Creators</h2>
-                        <span *ngFor="let item of entertaiment.creators.items"
-                            class="col">
-                            <h3>{{ item.role | titlecase }}</h3>
-                            <label>{{ item.name }}</label>
-                        </span>
-                        <mat-divider></mat-divider>
-                    </div>
-        
-                </mat-list>
-                <div *ngIf="entertaiment.creators.items.length > 0"
-                    class="urls">
-                    <a *ngFor="let item of entertaiment.urls"
-                    href="{{ item.url }}" target="_blank">
-                        {{ item.type }}
-                    </a>
+            <mat-list class="list-info">
+
+                <div *ngIf="entertaiment.dates  && entertaiment.dates.length > 0"
+                    class="grid">
+                    <span *ngFor="let item of entertaiment.dates">
+                        <label>{{ item.type }}:</label>
+                        <label> {{ item.date | date }}</label>
+                    </span>
+                    <mat-divider></mat-divider>
                 </div>
+    
+                <div *ngIf="entertaiment.prices && entertaiment.prices.length > 0"
+                    class="grid">
+                    <span *ngFor="let item of entertaiment.prices">
+                        <label>{{ item.type }}:</label>
+                        <label> {{ item.price }}$</label>
+                    </span>
+                    <mat-divider></mat-divider>
+                </div>
+    
+                <div *ngIf="entertaiment.characters.items.length > 0"
+                    class="grid">
+                    <h2>Characters</h2>
+                    <span *ngFor="let item of entertaiment.characters.items">
+                        <a (click)="toDetails(getHeroId( item.resourceURI ))">{{ item.name }}</a>
+                    </span>
+                    <mat-divider></mat-divider>
+                </div>
+    
+                <div *ngIf="entertaiment.creators.items.length > 0" 
+                        class="grid">
+                    <h2>Creators</h2>
+                    <span *ngFor="let item of entertaiment.creators.items"
+                        class="col">
+                        <h3>{{ item.role | titlecase }}</h3>
+                        <label>{{ item.name }}</label>
+                    </span>
+                    <mat-divider></mat-divider>
+                </div>
+    
+            </mat-list>
+            <div *ngIf="entertaiment.creators.items.length > 0"
+                class="urls">
+                <a *ngFor="let item of entertaiment.urls"
+                href="{{ item.url }}" target="_blank">
+                    {{ item.type }}
+                </a>
             </div>
+        </div>
         
     </div>
+
     <app-top-boton></app-top-boton>
+
 </ng-template>
