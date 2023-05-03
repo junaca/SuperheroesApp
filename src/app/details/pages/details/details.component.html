@@ -4,68 +4,71 @@
 </div>
 
 <ng-template #heroeInfo>
+    <div class="details-container"> 
+        <h1 class="name">{{ heroe.name }}</h1>
+
+        <!-- <div class="details-info"> -->
         
-    <div class="details-container">
-        <div class="image-container">
-            <img class="image"
-                src="{{ heroeImage }}">
-            <p class="description">
-                {{ heroe.description }}
-            </p>
-        </div>
-        <div class="info-container">
-            <h1 class="name">{{ heroe.name }}</h1>
+            <div class="image-container">
+                <img class="image"
+                    src="{{ heroeImage }}">
+                <p class="description">
+                    {{ heroe.description }}
+                </p>
+            </div>
+            
+            <div class="info-container">
+                <mat-divider></mat-divider>
+                <mat-list class="list-info">
 
-
-            <mat-divider></mat-divider>
-            <mat-list class="list-info">
-
-                <ul *ngIf="heroe.comics.items.length > 0">
-                    <h2 mat-subheader>Comics:</h2>
-                    <mat-list-item *ngFor="let item of  heroe.comics.items ">
-                    <li matListItemLine 
-                    (click)="toEntertaiment( 'comics',  item.resourceURI  )">
-                        <!-- <a (click)="toEntertaiment()"> -->
-                            {{ item.name }}
-                        <!-- </a> -->
-                    </li>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                </ul>
-
-                <ul *ngIf="heroe.series.items.length > 0">
-                    <h2 mat-subheader>Series:</h2>
-                    <mat-list-item *ngFor="let item of heroe.series.items">
-                        <li matListItemLine>
-                                {{ item.name }}
+                    <ul *ngIf="heroe.comics.items.length > 0">
+                        <h2 mat-subheader>Comics:</h2>
+                        <mat-list-item *ngFor="let item of  heroe.comics.items ">
+                        <li matListItemLine 
+                        (click)="toEntertaiment( 'comics',  item.resourceURI  )">
+                            <a>{{ item.name }}</a>
                         </li>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                </ul>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </ul>
 
-                <ul *ngIf="heroe.stories.items.length > 0">
-                    <h2 mat-subheader>Stories:</h2>
-                    <mat-list-item *ngFor="let item of  heroe.stories.items">
-                        <li matListItemLine>
-                                {{ item.name }}
-                        </li>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                </ul>
+                    <ul *ngIf="heroe.series.items.length > 0">
+                        <h2 mat-subheader>Series:</h2>
+                        <mat-list-item *ngFor="let item of heroe.series.items">
+                            <li matListItemLine
+                            (click)="toEntertaiment( 'series',  item.resourceURI  )">
+                                    <a>{{ item.name }}</a>
+                            </li>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </ul>
 
-                <ul *ngIf="heroe.events.items.length > 0">
-                    <h2 mat-subheader>Events:</h2>
-                    <mat-list-item *ngFor="let item of  heroe.events.items">
-                        <li matListItemLine>
-                                {{ item.name }}
-                        </li>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                </ul>
-                
-            </mat-list>
+                    <ul *ngIf="heroe.stories.items.length > 0">
+                        <h2 mat-subheader>Stories:</h2>
+                        <mat-list-item *ngFor="let item of  heroe.stories.items">
+                            <li matListItemLine
+                            (click)="toEntertaiment( 'stories',  item.resourceURI  )">
+                                    <a>{{ item.name }}</a>
+                            </li>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </ul>
 
-        </div>
+                    <ul *ngIf="heroe.events.items.length > 0">
+                        <h2 mat-subheader>Events:</h2>
+                        <mat-list-item *ngFor="let item of  heroe.events.items">
+                            <li matListItemLine
+                            (click)="toEntertaiment( 'events',  item.resourceURI  )">
+                                    <a>{{ item.name }}</a>
+                            </li>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </ul>
+                    
+                </mat-list>
+
+            </div>
+        <!-- </div> -->
     </div>
 
     <app-top-boton></app-top-boton>
