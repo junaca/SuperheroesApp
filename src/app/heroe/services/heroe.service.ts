@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { HeroeResponse, Result } from '../interfaces/heroe';
+import { HeroeResponse, Result } from '../../shared/interfaces/heroe';
 import { environment } from 'src/environments/environment';
 
 import { Subject, Observable, tap } from 'rxjs';
@@ -68,35 +68,6 @@ export class HeroeService {
 
   }
 
-  getHeroe( id: string ) {
-
-    let params = {
-      ts: 1000,
-      apikey: this.apikey,
-      hash: this.hash
-    }
-
-    return this.http.get<HeroeResponse>(`${this.baseUrl}characters/${ id }`, { params } );
-  }
-
-  getUrlImage( url: string, size: string, extension: string ): string {
-    return `${ url }/${size}.${ extension }`;
-  }
-
-  openWebside( url: string ) {
-    const params = {
-      ts: 1000,
-      apikey: this.apikey,
-      hash: this.hash
-    }
-
-    const paramString = Object.entries(params)
-                          .map(([key, value]) => `${key}=${value}`)
-                          .join('&');
-
-    return `${ url }?${paramString}`;
-    
-  }
 }
 
 interface DataResult {

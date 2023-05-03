@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, of, switchMap, tap } from 'rxjs';
-import { HeroeService } from '../../services/heroe.service';
-import { Result } from '../../interfaces/heroe';
+import { Result } from '../../../shared/interfaces/heroe';
+import { DetailsService } from '../../services/details.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-details',
@@ -21,7 +22,8 @@ export class DetailsComponent {
   }
 
   constructor( private activatedRoute: ActivatedRoute,
-               private heroeService: HeroeService,
+               private detailsService: DetailsService,
+               private sharedService: SharedService,
                private router: Router ) {}
 
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class DetailsComponent {
       tap( () => this.isReady = false ),
       switchMap( ({ id })  => {
 
-        return this.heroeService.getHeroe( id );
+        return this.detailsService.getHeroe( id );
       }),
       catchError( error => {
         console.log("Error", error.message)
@@ -44,22 +46,31 @@ export class DetailsComponent {
       if( resp ) {
         this._heroe = resp.data.results[0];
         this.isReady = true;
-        this.getCardImage();
+
+        const imageUrl = this._heroe.thumbnail.path;
+        const extension = this._heroe.thumbnail.extension;
+        this.heroeImage = this.sharedService.getUrlImage( imageUrl, "portrait_incredible", extension )
       }
     });
 
   }
 
-  getCardImage() {
-    const url = this._heroe.thumbnail.path;
-    const size = "portrait_incredible";
-    const extension = this._heroe.thumbnail.extension;
+  
 
-    this.heroeImage =this.heroeService.getUrlImage( url, size, extension )
+  getEntertimentUrl( url: string ) {
+    return this.detailsService.getEntertimentUrl( url );
   }
 
-  openWebside( url: string ) {
-    return this.heroeService.openWebside( url );
+  toEntertaiment( type: string, url: string ) {
+      const id = url.split("/").pop();
+      if(id){
+        this.router.navigate(["./details/entertaiment"], { 
+          queryParams: {
+            type,
+            id
+          }
+        });
+      } 
   }
 
 }

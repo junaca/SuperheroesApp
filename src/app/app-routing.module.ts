@@ -8,6 +8,11 @@ const routes: Routes = [
     .then( m => m.HeroeModule )
   },
   {
+    path: "details",
+    loadChildren: () => import( "./details/details.module" )
+    .then( m => m.DetailsModule )
+  },
+  {
     path: "**",
     redirectTo: "heroe"
   }
