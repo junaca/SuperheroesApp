@@ -3,7 +3,7 @@
   line-height: 1.2em;
 }
 .image{
-    height: 100%;
+    max-width: 100%;
     max-height: 700px;
     height: 70%;
     border-radius: 15px;
@@ -20,8 +20,6 @@
   }
 span{
     display: flex;
-    /* width: 100%; *//* 
-    flex-wrap: wrap; */
     white-space: nowrap;
     justify-content: space-between;
     padding: 10px;

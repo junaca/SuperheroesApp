@@ -23,8 +23,9 @@
             <mat-list class="list-info">
 
                 <div *ngIf="entertaiment.dates  && entertaiment.dates.length > 0"
-                    class="grid">
-                    <span *ngFor="let item of entertaiment.dates">
+                    class="list">
+                    <span *ngFor="let item of entertaiment.dates"
+                          class="list-item">
                         <label>{{ item.type }}:</label>
                         <label> {{ item.date | date }}</label>
                     </span>
@@ -32,7 +33,7 @@
                 </div>
     
                 <div *ngIf="entertaiment.prices && entertaiment.prices.length > 0"
-                    class="grid">
+                     class="list-item">
                     <span *ngFor="let item of entertaiment.prices">
                         <label>{{ item.type }}:</label>
                         <label> {{ item.price }}$</label>
@@ -41,7 +42,7 @@
                 </div>
     
                 <div *ngIf="entertaiment.characters.items.length > 0"
-                    class="grid">
+                    class="list">
                     <h2>Characters</h2>
                     <span *ngFor="let item of entertaiment.characters.items">
                         <a (click)="toDetails(getHeroId( item.resourceURI ))">{{ item.name }}</a>
@@ -50,7 +51,7 @@
                 </div>
     
                 <div *ngIf="entertaiment.creators.items.length > 0" 
-                        class="grid">
+                        class="list">
                     <h2>Creators</h2>
                     <span *ngFor="let item of entertaiment.creators.items"
                         class="col">

@@ -7,3 +7,13 @@
     align-items: center;
     grid-gap: 3vw;
 }
+@media (max-width: 1500px) {
+    .heroe-list{
+        grid-template-columns: repeat(auto-fit,minmax(334px, 1fr));
+    }
+}
+@media (max-width: 765px) {
+    .heroe-list{
+        grid-template-columns: repeat(auto-fit,minmax(216px, 500px));
+    }
+}

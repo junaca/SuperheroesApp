@@ -6,7 +6,6 @@ import { TopBotonComponent } from './components/top-boton/top-boton.component';
 import { DatePipe } from './pipes/date.pipe';
 
 
-
 @NgModule({
   declarations: [
     TopBotonComponent,

@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { HeroeService } from '../../services/heroe.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-paginator',
@@ -10,13 +11,13 @@ import { HeroeService } from '../../services/heroe.service';
 export class PaginatorComponent extends MatPaginator implements PageEvent {
 
   previousPageIndex?: number | undefined;
-  currentPageIndex = 0;
+  currentPageIndex: number = 1;
   displayedPages: number[] = [];
   termino?: string;
 
   constructor( private heroeService: HeroeService,
-    private customPaginatorIntl: MatPaginatorIntl, 
-    private changeDetectorRef: ChangeDetectorRef ) {
+               private customPaginatorIntl: MatPaginatorIntl, 
+               private changeDetectorRef: ChangeDetectorRef ) {
     super( customPaginatorIntl, changeDetectorRef);
   }
 
