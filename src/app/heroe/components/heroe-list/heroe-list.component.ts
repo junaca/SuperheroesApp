@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroeService } from '../../services/heroe.service';
-import { Result } from '../../interfaces/heroe';
+import { Result } from '../../../shared/interfaces/heroe';
 import { tap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';

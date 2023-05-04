@@ -1,0 +1,65 @@
+.name{
+  font-size: 4rem;
+  line-height: 1.2em;
+}
+.image{
+    max-width: 100%;
+    max-height: 700px;
+    height: 70%;
+    border-radius: 15px;
+    margin: 0px auto;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    white-space: normal;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0px 30px;
+    justify-content: space-between;
+    gap: 10px 30px;
+  }
+span{
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+a, mat-list a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:hover, mat-list a:hover{
+    cursor: pointer;
+    color: var(--terciary);
+}
+
+
+@media (max-width: 1300px) {
+    .name{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 700px) and ( orientation: portrait) {
+    .entertaiment-container{
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        font-size: 1rem;
+        padding: 10px;
+    }
+    mat-list-item, .mdc-list-item__content{
+        height: fit-content;
+    }
+    li{
+        white-space: normal;
+    }
+    .name{
+      font-size: 2rem;
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+    h3{
+        font-size: 1.4rem;
+    }
+}
