@@ -8,7 +8,10 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 @Component({
   selector: 'app-entertaiment',
   templateUrl: './entertaiment.component.html',
-  styleUrls: ['./entertaiment.component.css']
+  styleUrls: ['./entertaiment.component.css',
+              '../../styles/scrollbar-style.css',
+              '../../styles/shared-style.css'
+             ]
 })
 export class EntertaimentComponent {
 

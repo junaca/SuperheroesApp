@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, of, switchMap, tap } from 'rxjs';
+
 import { Result } from '../../../shared/interfaces/heroe';
 import { DetailsService } from '../../services/details.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
@@ -9,7 +9,10 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css',
+              '../../styles/scrollbar-style.css',
+              '../../styles/shared-style.css'
+             ]
 })
 export class DetailsComponent {
 
@@ -53,9 +56,7 @@ export class DetailsComponent {
       }
     });
 
-  }
-
-  
+  } 
 
   getEntertimentUrl( url: string ) {
     return this.detailsService.getEntertimentUrl( url );
